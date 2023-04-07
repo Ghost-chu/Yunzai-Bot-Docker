@@ -65,7 +65,6 @@ if [ -d $MIAO_PLUGIN_PATH"/.git" ]; then
     if [[ ! -f "$HOME/.ovo/miao.ok" ]]; then
         set -e
         echo -e "\n ================ \n ${Info} ${GreenBG} 更新 喵喵插件 运行依赖 ${Font} \n ================ \n"
-        cd $WORK_DIR
         pnpm install -P
         touch ~/.ovo/miao.ok
         set +e
@@ -95,7 +94,7 @@ if [ -d $PY_PLUGIN_PATH"/.git" ]; then
     if [[ ! -f "$HOME/.ovo/py.ok" ]]; then
         set -e
         echo -e "\n ================ \n ${Info} ${GreenBG} 更新 py-plugin 运行依赖 ${Font} \n ================ \n"
-        pnpm install iconv-lite @grpc/grpc-js @grpc/proto-loader -w
+        pnpm install -P
         poetry config virtualenvs.in-project true
         poetry install
         touch ~/.ovo/py.ok
@@ -127,7 +126,7 @@ if [ -d $XIAOYAO_CVS_PATH"/.git" ]; then
     if [[ ! -f "$HOME/.ovo/xiaoyao.ok" ]]; then
         set -e
         echo -e "\n ================ \n ${Info} ${GreenBG} 更新 xiaoyao-cvs 插件运行依赖 ${Font} \n ================ \n"
-        pnpm add promise-retry superagent -w
+        pnpm install -P
         touch ~/.ovo/xiaoyao.ok
         set +e
     fi
@@ -156,7 +155,7 @@ if [ -d $GUOBA_PLUGIN_PATH"/.git" ]; then
     if [[ ! -f "$HOME/.ovo/guoba.ok" ]]; then
         set -e
         echo -e "\n ================ \n ${Info} ${GreenBG} 更新 Guoba-Plugin 插件运行依赖 ${Font} \n ================ \n"
-        pnpm add multer body-parser jsonwebtoken -w
+        pnpm install -P
         touch ~/.ovo/guoba.ok
         set +e
     fi
