@@ -62,14 +62,6 @@ if [ -d $MIAO_PLUGIN_PATH"/.git" ]; then
         git pull origin master --allow-unrelated-histories
     fi
 
-    if [[ ! -f "$HOME/.ovo/miao.ok" ]]; then
-        set -e
-        echo -e "\n ================ \n ${Info} ${GreenBG} 更新 喵喵插件 运行依赖 ${Font} \n ================ \n"
-        pnpm install -P
-        touch ~/.ovo/miao.ok
-        set +e
-    fi
-
     echo -e "\n ================ \n ${Version} ${BlueBG} 喵喵插件版本信息 ${Font} \n ================ \n"
     git log -1 --pretty=format:"%h - %an, %ar (%cd) : %s"
 
@@ -121,14 +113,6 @@ if [ -d $XIAOYAO_CVS_PATH"/.git" ]; then
         git stash pop
     else
         git pull origin master --allow-unrelated-histories
-    fi
-
-    if [[ ! -f "$HOME/.ovo/xiaoyao.ok" ]]; then
-        set -e
-        echo -e "\n ================ \n ${Info} ${GreenBG} 更新 xiaoyao-cvs 插件运行依赖 ${Font} \n ================ \n"
-        pnpm install -P
-        touch ~/.ovo/xiaoyao.ok
-        set +e
     fi
 
     echo -e "\n ================ \n ${Version} ${BlueBG} xiaoyao-cvs 插件版本信息 ${Font} \n ================ \n"
