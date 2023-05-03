@@ -54,4 +54,6 @@ RUN git clone --depth=1 --branch main https://gitee.com/yoimiya-kokomi/Yunzai-Bo
 
 COPY --from=resource /res/entrypoint.sh /app/Yunzai-Bot/entrypoint.sh
 
+RUN mkdir /app
+
 ENTRYPOINT ["/app/Yunzai-Bot/entrypoint.sh"]
